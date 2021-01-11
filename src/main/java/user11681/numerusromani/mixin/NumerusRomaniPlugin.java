@@ -54,11 +54,12 @@ public class NumerusRomaniPlugin implements IMixinConfigPlugin {
                     instructions.add(new LdcInsnNode(""));
                     instructions.add(new MethodInsnNode(Opcodes.INVOKEVIRTUAL, "java/lang/String", "replaceAll", "(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;", false));
                     instructions.add(new MethodInsnNode(Opcodes.INVOKESTATIC, "java/lang/Integer", "parseInt", "(Ljava/lang/String;)I"));
-                    instructions.add(new MethodInsnNode(Opcodes.INVOKESTATIC, "user11681/numerusromani/RomanNumerals", "fromDecimal", "(I)Ljava/lang/String;"));
+                    instructions.add(new InsnNode(Opcodes.I2L));
+                    instructions.add(new MethodInsnNode(Opcodes.INVOKESTATIC, "user11681/numerusromani/RomanNumerals", "fromDecimal", "(J)Ljava/lang/String;"));
                     instructions.add(new InsnNode(Opcodes.ARETURN));
                     instructions.add(end);
 
-                    method.instructions.add(instructions);
+                    method.instructions.insertBefore(method.instructions.getFirst(), instructions);
                 }
             }
         }
