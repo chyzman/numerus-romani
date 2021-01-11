@@ -2,9 +2,10 @@
     "required": true,
     "minVersion": "0.8",
     "package": "user11681.numerusromani.mixin",
+    "plugin": "user11681.numerusromani.mixin.NumerusRomaniPlugin",
     "compatibilityLevel": "JAVA_8",
     "mixins": [
-        "LanguageMixin"
+        "LanguageDummyMixin"
     ],
     "client": [
         "I18nMixin",
