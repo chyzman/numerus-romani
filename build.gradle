@@ -3,7 +3,7 @@ plugins {
 }
 
 project.group = "user11681"
-project.version = "0.0.1"
+project.version = "0.0.2"
 
 wheel {
     minecraftVersion = "1.16.4"
