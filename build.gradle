@@ -1,14 +1,10 @@
 plugins {
-    id("wheel").version("snapshot")
+    id("wheel-fabric").version("latest.integration")
 }
 
-project.group = "user11681"
-project.version = "0.0.4"
-
-wheel {
-    minecraftVersion = "1.16.4"
-}
+group = "user11681"
+version = "0.0.4"
 
 dependencies {
-    modInclude("common-formatting")
+    //modInclude("common-formatting") // Bintray
 }
